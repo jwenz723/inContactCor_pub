@@ -1,0 +1,32 @@
+{
+
+  "name" : "inContactWeb",
+  "version": "0.0.1",
+  "meterVersionRequired" : "4.2.0-611",
+  "unsupportedPlatforms" : [ ],
+  "tags": "Windows",
+  "description": "Extracts InContact metrics for web servers from Windows Performance Counters",
+  "icon": "icon.png",
+  "command": "powershell -NoLogo -NonInteractive -Command Set-ExecutionPolicy RemoteSigned; .\\get-counters.ps1",
+  "metrics": [
+    "INC_PROCESSOR_PERCENT_PROCESSOR_TIME"
+  ],
+  "paramSchema": [
+    {
+      "title": "Delay",
+      "name": "delay",
+      "description": "Amount of time in milliseconds to wait between collection of Windows performance counters",
+      "type": "integer",
+      "default": 1000,
+      "required": true
+    },
+    {
+      "title" : "Source",
+      "name" : "source",
+      "description" : "The Source to display in the legend for the metrics data.  It will default to the hostname of the server",
+      "type" : "string",
+      "default": "",
+      "required" : false
+    }
+  ]
+}

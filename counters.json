@@ -1,0 +1,9 @@
+{ 
+   "counters": [
+       {
+           "counter_name": "\\processor(_total)\\% processor time",
+           "multiplier": "0.01",
+           "metric_id": "INC_PROCESSOR_PERCENT_PROCESSOR_TIME"
+       }
+   ]
+}

@@ -1,0 +1,5 @@
+{
+   "delay": 1000,
+   "source": "inContact Performance Conters",
+   "pollInterval": "1000"
+}
