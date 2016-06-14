@@ -1,10 +1,18 @@
 {
-  "INC_PROCESSOR_PERCENT_PROCESSOR_TIME": {
+  "INC_WEB_API_CALLS_PER_SECOND": {
     "defaultAggregate": "AVG",
     "defaultResolutionMS": 1000,
-    "description": "Percentage of CPU used",
-    "displayName": "Processor % Time",
-    "displayNameShort": "Proc % Time",
-    "unit": "percent"
+    "description": "API Calls Per Second",
+    "displayName": "API Calls/Second",
+    "displayNameShort": "API C/Sec",
+    "unit": "number"
+  },
+  "INC_WEB_API_CALL_TIME_AVG": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "API Call Time Average",
+    "displayName": "API Call Time Avg",
+    "displayNameShort": "API CT Avg",
+    "unit": "number"
   }
 }
