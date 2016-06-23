@@ -15,44 +15,18 @@ This plugin is compatible with Redis 2.6.X or later.
 - To install new meter go to Settings->Installation or [see instructions](https://help.boundary.com/hc/en-us/sections/200634331-Installation).
 - To upgrade the meter to the latest version - [see instructions](https://help.boundary.com/hc/en-us/articles/201573102-Upgrading-the-Boundary-Meter).
 
-### Plugin Setup
+#### Performance Counter Collection Setup
 
-This plugin is useable about of the box with an example `counters.json` which contain example counters to collect from. In most instances you may want to customize the metrics that need to be collected. The easiest method is clone this GitHub repository and modify the `counters.json` with the counters you wish to collect.
+This plugin is useable out of the box on WEB servers. There are 3 files used to define performance counters that should be collected by this plugin. They are: definition_counters.txt, definition_metrics.txt,
+and definition_multipliers.txt.  Each performance counter to be collected MUST have a value in each of the 3 files.
 
+* definition_counters.txt: contains the path to each counter you want this plugin to retrieve
+* definition_metrics.txt: contains the unique identifier used to identify each performance counter as a metric in pulse. Note if you create a new metric then you should also update the `metrics.json` file located in the respository described in the next section
+* definition_multipliers.txt: contains the value to multiply each performance counter `cooked_value` by from the `PerformanceCounterSample` to get the actual metric value to send to pulse
 
-#### Performance Counter Configuration File
-
-An example configuration file is shown here:
-
-```json
-{
-   "counters": [
-       {
-           "counter_name": "\\processor(_total)\\% processor time",
-           "multiplier": "0.01",
-           "metric_id": "PROCESSOR_PERCENT_PROCESSOR_TIME"
-       },
-       {
-           "counter_name": "\\memory\\% committed bytes in use",
-           "multiplier": "1.0",
-           "metric_id": "MEMORY_COMMITTED_BYTES_IN_USE"
-       },
-       {
-           "counter_name": "\\physicaldisk(_total)\\% disk time",
-           "multiplier": "0.01",
-           "metric_id": "PHYSICAL_DISK_PERCENT_DISK_TIME"
-       }
-   ]
-}
-
-```
-
-The description of each of the files is described below.
-
-- `counters` - An array of the performance counter objects that specied what is to be collected.
-- `counter_name` - Name of the Windows Performance Counter to collect
-- `multiplier` - Value to multiple the `cooked_value` from the `PerformanceCounterSample` type to get the actual metric value
-- `metric_id` - Unique metric identifier to use for the collected performance counter. Note if you create a new metric then you should also update the `metrics.json` file located in the respository described in the next section
+The data between these 3 files will be correlated within this plugin based upon the line number of the data within each file. Therefore, if you wish to collect the performance counter 
+"\ASP.NET Apps v4.0.30319(_LM_W3SVC_1_ROOT_inContactAPI)\Requests/Sec", with a pulse metric name of "INC_WEB_API_CALLS_PER_SECOND", and a multipler of "1.0", then these 3 values
+MUST be on the same line number in their respective files.
 
 #### Metrics Configuration File
 
@@ -87,22 +61,9 @@ This configuration file indicates the metric definitions used by this plugin. De
 }
 ```
 
-### Plugin Configuration Fields
-
-|Field Name  |Description                                            |
-|:-----------|:------------------------------------------------------|
-|Source      |The source to display in the legend for the REDIS data.|
-
 ### Metrics Collected
 
 |Metric Name               |Description|
 |:-------------------------|:---------------------------------------------------------------|
-|Processor % Time          |Percentage of CPU used                                          |
-|Memory Committed Bytes    |Memory committed bytes in use                                   |
-|Physical Disk % Time      |Physical Disk Percent Disk Time                                 |
-
-### Dashboards
-
-- Windows Performance Counter
-
+|Requests/Sec              |The number of API calls per second                              |
 
