@@ -33,7 +33,7 @@ Example:
 
 #### definition_metrics.txt
 
-This file contains the unique identifier used to identify each performance counter as a metric in pulse. Note if you create a new metric then you should also update the `metrics.json` file located in the respository described in the next section below.
+This file contains the unique identifier used to identify each performance counter as a metric in pulse. Note if you create a new metric then you should also update the `metrics.json` file located in the respository described in the next section below.  You must also add the metric name to the "metrics" section within plugin.json.
 
 Example:
 ```
