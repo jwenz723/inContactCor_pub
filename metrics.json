@@ -6,13 +6,5 @@
     "displayName": "API Calls/Second",
     "displayNameShort": "API C/Sec",
     "unit": "number"
-  },
-  "INC_WEB_API_CALL_TIME_AVG": {
-    "defaultAggregate": "AVG",
-    "defaultResolutionMS": 1000,
-    "description": "API Call Time Average",
-    "displayName": "API Call Time Avg",
-    "displayNameShort": "API CT Avg",
-    "unit": "number"
   }
 }
