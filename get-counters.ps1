@@ -3,8 +3,8 @@ $COUNTERS_FILE_NAME = "definition_counters.txt"
 $METRICS_FILE_NAME = "definition_metrics.txt"
 $MULTIPLIERS_FILE_NAME = "definition_multipliers.txt"
     
-$fcounters = Get-Content $COUNTERS_FILE_NAME
-$fmetrics = Get-Content $METRICS_FILE_NAME
+[string[]]$fcounters = Get-Content $COUNTERS_FILE_NAME
+[string[]]$fmetrics = Get-Content $METRICS_FILE_NAME
 [float[]]$fmultipliers = Get-Content $MULTIPLIERS_FILE_NAME
 
 $hostname = Get-Content Env:\COMPUTERNAME
