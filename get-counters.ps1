@@ -1,4 +1,4 @@
-# Define constants for program, PS way of doing this to make the real constants??
+# Define constants for program
 $COUNTERS_FILE_NAME = "definition_counters.txt"
 $METRICS_FILE_NAME = "definition_metrics.txt"
 $MULTIPLIERS_FILE_NAME = "definition_multipliers.txt"
