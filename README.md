@@ -1,7 +1,7 @@
 # TrueSite Pulse Plugin For Windows Performance Counter
 
 Template plugin for extracting metrics from the Windows Performance Counter.
-This plugin requires powershell v2 or higher.
+This plugin requires powershell v2 or higher. (Run this command in powershell to check the version, look for the number in the 'major' column: $PSVersionTable.PSVersion)
 
 ### Prerequisites
 
