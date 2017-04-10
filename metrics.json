@@ -35,7 +35,7 @@
     "defaultAggregate": "AVG",
     "defaultResolutionMS": 1000,
     "description": "",
-    "displayName": "UNC Processing Threads",
+    "displayName": "UCN Processing Threads",
     "displayNameShort": "Processing Threads",
     "unit": "number"
   },
